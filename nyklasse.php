@@ -20,9 +20,9 @@
     {
       $klassekode=$_POST ["klassekode"];
       $klassenavn=$_POST ["klassenavn"];
-      $studiekode=$_POST ["studiekode"];
+      $studiumkode=$_POST ["studiumkode"];
 
-      include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+      include("db-kobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
           $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
@@ -34,11 +34,11 @@
             }
           else
             {
-              $sqlSetning="INSERT INTO klasse VALUES('$klassekode','$klassenavn');";
+              $sqlSetning="INSERT INTO klasse VALUES('$klassekode','$klassenavn','$studiumkode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende klasse er n&aring; registrert: $klassekode $klassenavn"); 
+              print ("F&oslash;lgende klasse er n&aring; registrert: $klassekode $klassenavn $studiumkode <br />"); 
             }
     }
 ?> 
