@@ -1,8 +1,8 @@
-<?php  /* vis-alle-poststeder */
+<?php  /* vis-alle-klasser */
 /*
-/*  Programmet skriver ut alle registrerte poststeder
+/*  Programmet skriver ut alle registrerte klasser i en tabell
 */
-  include("db-tilkobling.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
+  include("db-kobling.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
 ?>
 <?php
   $sqlSetning="SELECT * FROM klasse;";
