@@ -17,9 +17,9 @@
   for ($r=1;$r<=$antallRader;$r++)
     {
       $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra sp�rringsresultatet */
-      $klassekode=$rad["klassekode"];        /* ELLER $klassekode=$rad[0]; */
+      $klassekode=$rad["klassekode"];        
       $klassenavn=$rad["klassenavn"];
-      $studiekode=$rad["studiekode"];    /* ELLER $studiekode=$rad[2]; */
+      $studiekode=$rad["studiekode"];   
 
       print ("<tr> <td> $klassekode </td> <td> $klassenavn </td> <td> $studiekode </td> </tr>");
     }
