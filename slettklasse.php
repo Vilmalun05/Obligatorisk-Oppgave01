@@ -29,8 +29,7 @@
               print ("Klassen finnes ikke");
             }
           else
-            {	  
-              else
+            
 {
     // Slett studentene som tilhører klassen
     $sqlSetning="DELETE FROM student WHERE klassekode='$klassekode';";
