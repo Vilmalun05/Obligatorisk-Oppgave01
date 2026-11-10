@@ -1,7 +1,7 @@
-<?php  /* slett-poststed */
+<?php  /* slett-klasse */
 /*
-/*  Programmet lager et skjema for å velge et poststed som skal slettes  
-/*  Programmet sletter det valgte poststedet
+/*  Programmet lager et skjema for å velge en klasse som skal slettes  
+/*  Programmet sletter den valgte klassen
 */
 ?> 
 
@@ -31,11 +31,18 @@
             }
           else
             {	  
-              $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
-              mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-                /* SQL-setning sendt til database-serveren */
-		
-              print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
+              else
+{
+    // Slett studentene som tilhører klassen
+    $sqlSetning="DELETE FROM student WHERE klassekode='$klassekode';";
+    mysqli_query($db,$sqlSetning) or die ("ikke mulig å slette studentene");
+
+    // Slett klassen
+    $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
+    mysqli_query($db,$sqlSetning) or die ("ikke mulig å slette klassen");
+
+    print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode <br />");
+}
             }
 
     }
