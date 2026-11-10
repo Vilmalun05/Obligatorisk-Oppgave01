@@ -2,6 +2,7 @@
 /*
 /*  Programmet lager et skjema med en statisk listeboks med ukedag
 */
+include ("db-kobling.php");
 ?> 
 
 <h3>Velg ukedag</h3>
