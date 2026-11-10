@@ -10,19 +10,10 @@
 
 <form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft()">
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-  <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
+  <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" 
+  onClick="return confirm('Er du sikker på at du vil slette denne klassen?')" /> 
 </form>
 
-</select> 
-
-<br><br>
-
-<input type="submit"
-       name="slett"
-       value="Slett klasse"
-        onClick="return confirm('Er du sikker på at du vil slette denne klassen?')">
-
-</form>
 
 <?php
   if (isset($_POST ["slettKlasseKnapp"]))

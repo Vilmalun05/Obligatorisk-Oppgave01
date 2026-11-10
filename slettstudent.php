@@ -10,19 +10,10 @@
 
 <form method="post" action="" id="slettstudent" name="slettstudent" onSubmit="return bekreft()">
   Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
-  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" /> 
+  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" 
+  onClick="return confirm('Er du sikker på at du vil slette denne studenten?')" /> 
 </form>
 
-</select> 
-
-<br><br>
-
-<input type="submit"
-       name="slett"
-       value="Slett student"
-        onClick="return confirm('Er du sikker på at du vil slette denne studenten?')">
-
-</form>
 
 <?php
   if (isset($_POST ["slettStudentKnapp"]))
