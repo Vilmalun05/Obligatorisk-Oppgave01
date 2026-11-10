@@ -1,10 +1,11 @@
-<?php  /* vis-alle-klasser */
+<?php  /* vis-klasser */
 /*
-/*  Programmet skriver ut alle registrerte klasser i en tabell
+/*  Programmet skriver ut en registrert klasse i en tabell
 */
-  include("db-kobling.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
+  include("db-kobling.php"); 
 ?>
 <?php
+
   $sqlSetning="SELECT * FROM klasse WHERE klassekode='1';";
   
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
