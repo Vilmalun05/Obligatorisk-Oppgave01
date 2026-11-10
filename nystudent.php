@@ -17,30 +17,41 @@
 </form>
 
 <?php 
-  if (isset($_POST ["registrerStudentKnapp"]))
+  <?php
+
+if (isset($_POST["registrerStudentKnapp"]))
+{
+    $brukernavn = $_POST["brukernavn"];
+    $fornavn = $_POST["fornavn"];
+    $etternavn = $_POST["etternavn"];
+    $klassekode = $_POST["klassekode"];
+
+    include("db-kobling.php");
+
+    // Sjekker om brukernavnet allerede finnes
+    $sqlSetning = "SELECT * FROM student WHERE brukernavn='$brukernavn'";
+
+    $sqlResultat = mysqli_query($db, $sqlSetning)
+        or die("Ikke mulig å hente data fra databasen");
+
+    $antallRader = mysqli_num_rows($sqlResultat);
+
+    if ($antallRader != 0)
     {
-      $brukernavn=$_POST ["brukernavn"];
-      $fornavn=$_POST ["fornavn"];
-      $etternavn=$_POST ["etternavn"];
-      $klassekode=$_POST ["klassekode"];
-
-      include("db-kobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-
-          $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
-          $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-          $antallRader=mysqli_num_rows($sqlResultat); 
-
-          if ($antallRader!=0)  /* klasse er registrert fra før */
-            {
-              print ("Klassen er registrert fra f&oslashr");
-            }
-          else
-            {
-              $sqlSetning="INSERT INTO klasse VALUES('$klassekode','$klassenavn','$studiumkode');";
-              mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
-                /* SQL-setning sendt til database-serveren */
-
-              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode <br />"); 
-            }
+        print("Studenten er registrert fra før!");
     }
+    else
+    {
+        $sqlSetning = "INSERT INTO student VALUES
+        ('$brukernavn','$fornavn','$etternavn','$klassekode')";
+
+        mysqli_query($db, $sqlSetning)
+            or die("Ikke mulig å registrere student i databasen");
+
+        print("Følgende student er nå registrert:
+        $brukernavn $fornavn $etternavn $klassekode");
+    }
+}
+
+?>
 ?> 
