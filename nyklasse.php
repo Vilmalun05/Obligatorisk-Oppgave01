@@ -10,6 +10,7 @@
 <form method="nyklasse" action="" id="registrernyklasse" name="registrernyklasse">
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
   Klassenavn <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
+  Studiekode <input type="text" id="studiekode" name="studiekode" required /> <br/>
   <input type="submit" value="Registrer klasse" id="registrerKlasseKnapp" name="registrerKlasseKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
@@ -19,6 +20,7 @@
     {
       $klassekode=$_POST ["klassekode"];
       $klassenavn=$_POST ["klassenavn"];
+      $studiekode=$_POST ["studiekode"];
 
       include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
