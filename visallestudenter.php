@@ -5,14 +5,14 @@
   include("db-kobling.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
 ?>
 <?php
-  $sqlSetning="SELECT * FROM klasse;";
+  $sqlSetning="SELECT * FROM student;";
   
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
     /* SQL-setning sendt til database-serveren */
 	
   $antallRader=mysqli_num_rows($sqlResultat);  /* antall rader i resultatet beregnet */
 
-  print ("<h3>Registrerte klasser</h3>");
+  print ("<h3>Registrerte studenter</h3>");
   print ("<table border=1>");   
   print "<tr><th align=left>brukernavn</th> <th align=left>fornavn</th> <th align=left>etternavn</th> <th align=left>klassekode</th></tr>";
 
