@@ -9,7 +9,7 @@
 
 <h3>Slett Klasse</h3>
 
-<form method="post" action="" id="slettKlasse" name="slettKlasse" onSubmit="return bekreft()">
+<form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft()">
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
   <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
 </form>
