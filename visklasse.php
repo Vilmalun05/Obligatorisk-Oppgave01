@@ -12,16 +12,16 @@
   $antallRader=mysqli_num_rows($sqlResultat);  /* antall rader i resultatet beregnet */
 
   print "<table border=1>";
-  print "<tr><th align=left>klassekode</th> <th align=left>klassenavn</th> <th align=left>studiekode</th></tr>";
+  print "<tr><th align=left>klassekode</th> <th align=left>klassenavn</th> <th align=left>studiumkode</th></tr>";
 
   for ($r=1;$r<=$antallRader;$r++)
     {
       $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra sp�rringsresultatet */
       $klassekode=$rad["klassekode"];        
       $klassenavn=$rad["klassenavn"];
-      $studiekode=$rad["studiekode"];   
+      $studiumkode=$rad["studiumkode"];   
 
-      print ("<tr> <td> $klassekode </td> <td> $klassenavn </td> <td> $studiekode </td> </tr>");
+      print ("<tr> <td> $klassekode </td> <td> $klassenavn </td> <td> $studiumkode </td> </tr>");
     }
   print ("</table>"); 
 ?>
