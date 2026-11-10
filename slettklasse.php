@@ -5,7 +5,6 @@
 */
 ?> 
 
-<script src="funksjoner.js"> </script>
 
 <h3>Slett Klasse</h3>
 
