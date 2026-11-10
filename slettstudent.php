@@ -13,6 +13,17 @@
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" /> 
 </form>
 
+</select> 
+
+<br><br>
+
+<input type="submit"
+       name="slett"
+       value="Slett student"
+        onClick="return confirm('Er du sikker på at du vil slette denne studenten?')">
+
+</form>
+
 <?php
   if (isset($_POST ["slettStudentKnapp"]))
     {	
