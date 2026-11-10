@@ -3,7 +3,8 @@
 /*  Programmet skriver ut alle registrerte poststeder
 */
   include("db-tilkobling.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
-
+?>
+<?php
   $sqlSetning="SELECT * FROM klasse;";
   
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
