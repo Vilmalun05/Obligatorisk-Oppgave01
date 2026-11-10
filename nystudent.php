@@ -17,7 +17,7 @@
 </form>
 
 <?php 
-  <?php
+
 
 if (isset($_POST["registrerStudentKnapp"]))
 {
@@ -54,4 +54,3 @@ if (isset($_POST["registrerStudentKnapp"]))
 }
 
 ?>
-?> 
